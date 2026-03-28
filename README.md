@@ -1,6 +1,7 @@
 # nosal
 
-strona do robienia nosaczowych memow
+- strona do robienia nosaczowych memow
+- https://nosaczo.github.io/nosal/
 
 ### dodawanie obrazkow
 
