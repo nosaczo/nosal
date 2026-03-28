@@ -41,11 +41,8 @@ function loadImages(arr, folder, containerId, clickHandler) {
 
 const canvas = document.getElementById('memeCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 1177; canvas.height = 813;
-ctx.fillStyle = "#111";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-let bgImg = null;
+let bgImg = new window.Image();
 let bgRatio = 1;
 let overlays = [];
 let draggingOverlay = null;
@@ -54,6 +51,14 @@ let resizingOverlay = null;
 let resizeStart = {x:0, y:0, w:0, h:0};
 let showOutline = true;
 let selectedOverlayIdx = -1;
+
+// default background = black.png
+bgImg.src = 'images/backgrounds/black.png';
+bgImg.onload = () => {
+  bgRatio = bgImg.width / bgImg.height;
+  resizeCanvas();
+  drawMeme();
+};
 
 function setBackground(src) {
   bgImg = new window.Image();
@@ -116,11 +121,8 @@ function addTextObject() {
 
 function drawMeme() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  if(bgImg) {
+  if (bgImg) {
     ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-  } else {
-    ctx.fillStyle = getCanvasBgColor();
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
   overlays.forEach((o, i) => drawOverlay(o, i));
   drawText();
@@ -237,12 +239,21 @@ function updateCanvasSizeLabel() {
 function toggleTheme() {
   document.body.classList.toggle('dark');
   const btn = document.getElementById('themeBtn');
-  btn.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
-  drawMeme();
-}
+  const isDark = document.body.classList.contains('dark');
+  btn.textContent = isDark ? "☀️" : "🌙";
 
-function getCanvasBgColor() {
-  return document.body.classList.contains('dark') ? "#111" : "#fff";
+  // if current bg is one of the solid defaults, swap it
+  const src = bgImg && bgImg.src ? bgImg.src : '';
+  const isBlack = src.includes('black.png');
+  const isWhite = src.includes('white.png');
+
+  if (isDark && isWhite) {
+    setBackground('images/backgrounds/black.png');
+  } else if (!isDark && isBlack) {
+    setBackground('images/backgrounds/white.png');
+  } else {
+    drawMeme();
+  }
 }
 
 // Overlay interaction
