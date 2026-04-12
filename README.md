@@ -22,6 +22,10 @@ make update
 
 ## changelog
 
+### 0.1.2
+- licencja GNU
+- nowe obrazki (`characters` oraz `items`)
+
 ### 0.1.1
 - poprawiono blad zwiazany z rysowaniem po podstawowym tle
 

@@ -1,7 +1,7 @@
 const backgrounds = ['black.png','garaz.webp','kuchnia.jpg','piwnica.webp','pokoj.webp','white.png'];
 const templates = ['ameno.jpg','detuche-room.png','dlaczego.jpg','dura-lex.webp','helmud2.jpg','helmud.webp','komputerowy-piniondz.webp','nah.png','narwany-morderca.png','nerved.png','nosacz-brain.webp','pajak.webp','papiez.png','private.png','warum.jpg'];
-const characters = ['anger.png','brzezina.png','ciemiezyciel.png','dlaczego.png','janusz1.png','janusz2.png','janusz3.png','janusz4.png','janusz-idzie1.png','janusz-idzie2.png','janusz-sad2.png','janusz-sad3.png','janusz-sad4.png','janusz-sad.png','janusz-siedzi1.png','janusz-siedzi2.png','lot1.png','lot2.png','lot3.png','pioter.png','satrapa2.png','satrapa.png'];
-const items = ['beczka1.png','chleb.png','cukiernica.png','dialog1.png','dialog2.png','dialog3.png','drabina.png','herbata.png','laczki.png','lza.png','mulczowanie.png','parkside.png','topex.png','wigry.png','wrzeciono.png','wurst.png','ytong.png'];
+const characters = ['anger2.webp','anger.png','brzezina.png','ciemiezyciel.png','dlaczego.png','janusz1.png','janusz2.png','janusz3.png','janusz4.png','janusz-idzie1.png','janusz-idzie2.png','janusz-sad2.png','janusz-sad3.png','janusz-sad4.png','janusz-sad.png','janusz-siedzi1.png','janusz-siedzi2.png','krol-szczurow.webp','lot1.png','lot2.png','lot3.png','pioter2.png','pioter.png','satrapa2.png','satrapa.png','szczur-krolow.webp'];
+const items = ['beczka1.png','chleb.png','cukiernica.png','dialog1.png','dialog2.png','dialog3.png','drabina.png','dywan.webp','flaga.webp','herbata.png','komputer.webp','krzeslo.webp','kwiatek1.webp','kwiatek2.webp','laczki.png','lza.png','mulczowanie.png','parkside.png','saturator.webp','stol.webp','topex.png','wigry.png','wrzeciono.png','wurst.png','yato.webp','ytong.png','zegar.webp'];
 
 function loadImages(arr, folder, containerId, clickHandler) {
   const container = document.getElementById(containerId);
