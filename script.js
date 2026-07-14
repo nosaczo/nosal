@@ -1,7 +1,8 @@
-const backgrounds = ['black.png','garaz.webp','kuchnia.jpg','piwnica.webp','pokoj.webp','white.png'];
-const templates = ['ameno.jpg','detuche-room.png','dlaczego.jpg','dura-lex.webp','helmud2.jpg','helmud.webp','komputerowy-piniondz.webp','nah.png','narwany-morderca.png','nerved.png','nosacz-brain.webp','pajak.webp','papiez.png','private.png','warum.jpg'];
-const characters = ['anger2.webp','anger.png','brzezina.png','ciemiezyciel.png','dlaczego.png','janusz1.png','janusz2.png','janusz3.png','janusz4.png','janusz-idzie1.png','janusz-idzie2.png','janusz-sad2.png','janusz-sad3.png','janusz-sad4.png','janusz-sad.png','janusz-siedzi1.png','janusz-siedzi2.png','krol-szczurow.webp','lot1.png','lot2.png','lot3.png','pioter2.png','pioter.png','satrapa2.png','satrapa.png','szczur-krolow.webp'];
-const items = ['beczka1.png','chleb.png','cukiernica.png','dialog1.png','dialog2.png','dialog3.png','drabina.png','dywan.webp','flaga.webp','herbata.png','komputer.webp','krzeslo.webp','kwiatek1.webp','kwiatek2.webp','laczki.png','lza.png','mulczowanie.png','parkside.png','saturator.webp','stol.webp','topex.png','wigry.png','wrzeciono.png','wurst.png','yato.webp','ytong.png','zegar.webp'];
+const backgrounds = ['black.webp','garaz.webp','kuchnia.jpg','piwnica.webp','pokoj.webp','white.webp'];
+const templates = ['ameno.webp','detuche-room.webp','dlaczego.jpg','dura-lex.webp','helmud2.jpg','helmud.webp','komputerowy-piniondz.webp','nah.png','narwany-morderca.webp','nerved.webp','nosacz-brain.webp','pajak.webp','papiez.webp','private.webp','warum.jpg'];
+const characters = ['anger2.webp','anger3.webp','anger.png','brzezina.png','ciemiezyciel.png','dlaczego.png','halina.png','helmud1.webp','helmud2.webp','janusz1.png','janusz2.png','janusz3.png','janusz-idzie1.png','janusz-idzie2.webp','janusz-sad2.png','janusz-sad3.webp','janusz-sad4.png','janusz-sad5.webp','janusz-sad.png','janusz-siedzi1.webp','janusz-siedzi2.png','janusz-suspens.png','krol-szczurow.webp','lot1.png','lot2.png','lot3.png','pioter2.png','pioter-glowa.png','pioter.png','pioter-suspens.png','satrapa2.png','satrapa.png','szczur-krolow.webp'];
+const items = ['beczka1.webp','chleb.png','cukiernica.png','dialog1.png','dialog2.png','dialog3.png','dialog4.png','drabina.png','dywan.webp','flaga.webp','herbata.png','kabel.webp','komputer.webp','krzeslo.webp','kwiatek1.webp','kwiatek2.webp','laczki.png','lza.png','mulczowanie.webp','parkside.png','prodiz.webp','saturator.webp','stol.webp','topex.png','wigry.png','wrzeciono.png','wurst.webp','yato.webp','ytong.png','zegar.webp'];
+const reactions = ['bij-slopiarza.webp','gnebisz.webp','kompromitacja-cwela.webp','nie-jeblo.jpg','to-gowno-jest.png','wsciekles.webp'];
 
 function loadImages(arr, folder, containerId, clickHandler) {
   const container = document.getElementById(containerId);
@@ -52,8 +53,8 @@ let resizeStart = {x:0, y:0, w:0, h:0};
 let showOutline = true;
 let selectedOverlayIdx = -1;
 
-// default background = black.png
-bgImg.src = 'images/backgrounds/black.png';
+// default background = black.webp
+bgImg.src = 'images/backgrounds/black.webp';
 bgImg.onload = () => {
   bgRatio = bgImg.width / bgImg.height;
   resizeCanvas();
@@ -244,13 +245,13 @@ function toggleTheme() {
 
   // if current bg is one of the solid defaults, swap it
   const src = bgImg && bgImg.src ? bgImg.src : '';
-  const isBlack = src.includes('black.png');
-  const isWhite = src.includes('white.png');
+  const isBlack = src.includes('black.webp');
+  const isWhite = src.includes('white.webp');
 
   if (isDark && isWhite) {
-    setBackground('images/backgrounds/black.png');
+    setBackground('images/backgrounds/black.webp');
   } else if (!isDark && isBlack) {
-    setBackground('images/backgrounds/white.png');
+    setBackground('images/backgrounds/white.webp');
   } else {
     drawMeme();
   }
@@ -381,6 +382,7 @@ loadImages(backgrounds, 'backgrounds', 'backgrounds', setBackground);
 loadImages(templates, 'templates', 'templates', setBackground);
 loadImages(characters, 'characters', 'characters', addOverlay);
 loadImages(items, 'items', 'items', addOverlay);
+loadImages(reactions, 'reactions', 'reactions', addOverlay);
 
 // update shape
 updateCanvasSizeLabel();

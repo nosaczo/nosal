@@ -107,7 +107,7 @@ body.dark #right {
   overflow-y: auto;
   padding: 4px;
 }
-#backgrounds img, #templates img, #characters img, #items img {
+#backgrounds img, #templates img, #characters img, #items img, #reactions img {
   width: 60px;
   height: 60px;
   object-fit: contain;

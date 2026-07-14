@@ -22,6 +22,12 @@ make update
 
 ## changelog
 
+### 0.1.3
+- sekcja `reactions`
+- nowe obrazki (`characters` oraz `items`)
+- redukcja rozmiaru obrazkow
+- drobna aktualizacja czcionek
+
 ### 0.1.2
 - licencja GNU
 - nowe obrazki (`characters` oraz `items`)

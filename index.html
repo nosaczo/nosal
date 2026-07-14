@@ -29,9 +29,11 @@
           <div class="fontControls">
             <div><label><span>Font:</span>
               <select id="fontFamily" onchange="drawMeme()">
-                <option>Impact</option>
                 <option>Arial</option>
-                <option>Comic Sans MS</option>
+                <option>Verdana</option>
+                <option>Times New Roman</option>
+                <option>Georgia</option>
+                <option>Courier New</option>
                 <option>Times New Roman</option>
               </select>
             </label></div>
@@ -39,7 +41,6 @@
               <select id="fontWeight" onchange="drawMeme()">
                 <option>bold</option>
                 <option>normal</option>
-                <option>lighter</option>
               </select>
             </label></div>
             <div><label><span>Color:</span>
@@ -76,12 +77,14 @@
       <div id="characters" class="grid"></div>
       <h2>Items</h2>
       <div id="items" class="grid"></div>
+      <h2>Reactions</h2>
+      <div id="reactions" class="grid"></div>
     </div>
   </div>
   <a id="downloadLink" style="display:none"></a>
   <script src="script.js"></script>
 <footer style="text-align:center; padding: 1em 0;">
-  &copy; 2026 &reg; | v0.1.2 | <a href="https://github.com/nosaczo" target="_blank">github.com/nosaczo</a>
+  &copy; 2026 &reg; | v0.1.3 | <a href="https://github.com/nosaczo" target="_blank">github.com/nosaczo</a>
 </footer>
 </body>
 </html>
