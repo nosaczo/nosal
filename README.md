@@ -22,6 +22,10 @@ make update
 
 ## changelog
 
+### 0.1.4
+- nowe obrazki
+- domyslna czcionka `Georgia`
+
 ### 0.1.3
 - sekcja `reactions`
 - nowe obrazki (`characters` oraz `items`)
